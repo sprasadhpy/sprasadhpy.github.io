@@ -70,8 +70,8 @@ $(document).ready(function(){
 						self.reset();
 						break;
 					case "p1" :
+						self.reset();
 						self.forward($target,$secondary);
-						break;
 					case "p3" :
 						if ( parseInt($target.attr('data-order')) === self.maxz() )
 						{	
