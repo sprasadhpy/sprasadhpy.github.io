@@ -152,9 +152,30 @@
                   <center> <p style="color: red;font-style: italic; font-size: 14px;"> Scroll through this page to know more about me </p>
                   <div style="display: flex; flex-direction: column; align-items: center;">
                     <img alt="image" src="img/BH_Final.jpg" class="img-responsive" style="width: 400px; height: 400px;">
-<body>
- <p> <button id="expand-button" onclick="toggleContent()"> Click for Image description </button> </p>
-  <div id="expandable-content" class="expandable-content">
+                    <head>
+                    <style>
+                      .expandable-content {
+                        display: none;
+                      }
+                    </style>
+                    <script>
+                      function toggleContent() {
+                        var content = document.getElementById("expandable-content");
+                        var button = document.getElementById("expand-button");
+                  
+                        if (content.style.display === "none") {
+                          content.style.display = "block";
+                          button.innerText = "Hide description";
+                        } else {
+                          content.style.display = "none";
+                          button.innerText = "Show description";
+                        }
+                      }
+                    </script>
+                  </head>        
+                    <body>
+                   <p> <button id="expand-button" onclick="toggleContent()"> Click for Image description </button> </p>
+                    <div id="expandable-content" class="expandable-content">
     <ul>
     <p align="justify"> 
     <p style="font-style: italic; font-size: 12px;">
