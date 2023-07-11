@@ -150,8 +150,47 @@
                  <div class="col-sm-20 col-md-15">
                   <center> <p style= "font-size: 24px;"> Welcome to my page &#x1f60a; [🖥️&📱 Compatible]</center> 
                   <center> <p style="color: red;font-style: italic; font-size: 14px;"> Scroll through this page to know more about me </p>
-                   <div style="display: flex; flex-direction: column; align-items: center;">
-                  <img alt="image" src="img/BH_Final.jpg" class="img-responsive" style="width: 400px; height: 400px;"> 
+                  <!--  <div style="display: flex; flex-direction: column; align-items: center;">-->
+                <!--  <img alt="image" src="img/BH_Final.jpg" class="img-responsive" style="width: 400px; height: 400px;"> -->
+                  <title>Image Stacking Example</title>
+                  <style>
+                      .image-container {
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                      }
+                      
+                      .image-container img {
+                          max-width: 100%;
+                          max-height: 100%;
+                      }
+                  </style>
+                  <script>
+                      var images = [
+                          "BL1.jpg",
+                          "BL2.jpg",
+                          "BL3.jpg"
+                      ];
+                      
+                      var currentIndex = 0;
+                      
+                      function showNextImage() {
+                          var imageContainer = document.getElementById("imageContainer");
+                          currentIndex = (currentIndex + 1) % images.length;
+                          var nextImage = images[currentIndex];
+                          imageContainer.innerHTML = '<img src="' + nextImage + '">';
+                      }
+                  </script>
+              </head>
+              <body>
+                  <div id="imageContainer" class="image-container" onclick="showNextImage()">
+                      <img src="BL1.jpg">
+                  </div>
                    <p align="justify"> 
                    <p style="font-style: italic; font-size: 14px;"> Image Processing of the black hole (Galaxy M87,Virgo cluster) picture captured by the Event Horizon Telescope (EHT)
                    <p style="font-style: italic; font-size: 14px;"> <a href="https://www.behance.net/gallery/174861271/Image-Processing-Algorithms-on-the-Blackhole-image" target="_blank"> HDimages </a> <a href="https://github.com/sprasadhpy/Image-processing--Algorithms-Blackhole" target="_blank">| Code </a>
