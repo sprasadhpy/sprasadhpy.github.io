@@ -133,7 +133,7 @@
           </ul>
         </div>
       </div>
-      <div id="main">
+        <div id="main">
         <div id="biography" class="page home" data-pos="home">
           <div class="pageheader">
             <div class="headercontent">
@@ -148,39 +148,43 @@
                    </div>
                   <div class="clearfix visible-sm visible-xs"></div> -->
                  <div class="col-sm-20 col-md-15">
-                  <center> <p style= "font-size: 24px;"> Welcome to my page &#x1f60a; [🖥️&📱 Compatible]</center> 
-                  <center> <p style="color: red;font-style: italic; font-size: 14px;"> Scroll through this page to know more about me </p>
-                  <div style="display: flex; flex-direction: column; align-items: center;">
-                    <img alt="image" src="img/BH_Final.jpg" class="img-responsive" style="width: 400px; height: 400px;">
-                    <head>
-                    <style>
-                      .expandable-content {
-                        display: none;
-                      }
-                    </style>
-                    <script>
-                      function toggleContent() {
-                        var content = document.getElementById("expandable-content");
-                        var button = document.getElementById("expand-button");
-                  
-                        if (content.style.display === "none") {
-                          content.style.display = "block";
-                          button.innerText = "Hide description";
-                        } else {
-                          content.style.display = "none";
-                          button.innerText = "Show description";
-                        }
-                      }
-                    </script>
-                  </head>        
-                    <body>
-                   <p> <button id="expand-button" onclick="toggleContent()"> Click for Image description </button> </p>
-                    <div id="expandable-content" class="expandable-content">
+                  <center> <p style= "font-size: 18px;"> Welcome to my page &#x1f60a; [🖥️&📱 Compatible]</center> 
+                  <center> <p style="color: red;font-style: italic; font-size: 12px;"> Scroll through this page to know more about me </p>
+                   <div style="display: flex; flex-direction: column; align-items: center;">
+                   <img alt="image" src="img/BH_Final.jpg" class="img-responsive" style="width: 400px; height: 400px;">
+                   <p align="justify"> 
+                   <p style="font-style: italic; font-size: 14px;"> Image Processing of the black hole (Galaxy M87,Virgo cluster) picture captured by the Event Horizon Telescope (EHT)
+                   <p style="font-style: italic; font-size: 14px;"> <a href="https://www.behance.net/gallery/174861271/Image-Processing-Algorithms-on-the-Blackhole-image" target="_blank"> HDimages </a> <a href="https://github.com/sprasadhpy/Image-processing--Algorithms-Blackhole" target="_blank">| Code </a>
+                   <!--  <p style="font-style: italic; font-size: 12px;"> 1)Direct evidence by EHT; 2)Mapped the magnetic fields using polarized light waves by EHT; 3)Pixelated version; 4),5),6)RGB channels; 7),8),9)Color Space Conversion; 10)Image contour lines; 11)Image Filled contour; 12)Entropy; 13)FFT Spectrum Magnitude; 14)FFT Phase; 15)Reconstructed image; 16)Laplace Edge Detection; 17)Embossed Image; 18)Schar Edge Detection; 19)Sharpening with Laplacian; 20)Contrast stretching with PIL as a point operation; 21)Otsu's segmentation; 22)Felzenszwalbs's segmentation; 23),24) Morphological ACWE segmentation and evolution</p>-->
+   <style>
+    .expandable-content {
+      display: none;
+    }
+  </style>
+  <script>
+    function toggleContent() {
+      var content = document.getElementById("expandable-content");
+      var button = document.getElementById("expand-button");
+
+      if (content.style.display === "none") {
+        content.style.display = "block";
+        content.style.fontSize ="12px";
+        button.innerText = "Hide Description";
+      } else {
+        content.style.display = "none";
+        button.innerText = "Show Description";
+      }
+    }
+  </script>
+</head>
+<body>
+ <p> <button id="expand-button" onclick="toggleContent()"> Click for Image description </button> </p>
+  <div id="expandable-content" class="expandable-content">
     <ul>
     <p align="justify"> 
     <p style="font-style: italic; font-size: 12px;">
       1)Direct evidence by EHT scientists ;
-      2)Magnetic fields were mapped by EHT scientists using polarized light waves. ;
+      2)Mapped the magnetic fields using polarized light waves by EHT scientists ;
       3)Pixelated version ;
       4) 5) 6)RGB channels ;
       7) 8) 9)Color Space Conversion ;
