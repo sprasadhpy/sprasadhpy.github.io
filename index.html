@@ -168,6 +168,7 @@
 
       if (content.style.display === "none") {
         content.style.display = "block";
+        content.style.fontSize ="12px";
         button.innerText = "Hide Description";
       } else {
         content.style.display = "none";
@@ -177,16 +178,16 @@
   </script>
 </head>
 <body>
-  <h1>Expandable Text Example</h1>
-
   <button id="expand-button" onclick="toggleContent()">Show Content</button>
 
   <div id="expandable-content" class="expandable-content">
     <h3> Description </h3>
     <ul>
+    <p style="font-style: italic; font-size: 12px;">
       <li>Item 1</li>
       <li>Item 2</li>
       <li>Item 3</li>
+    </p>
     </ul>
   </div>
   </div>
