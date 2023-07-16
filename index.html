@@ -31,42 +31,8 @@
     <script type="text/javascript" src="js/perfect-scrollbar-0.4.5.with-mousewheel.min.js"></script>
     <script type="text/javascript" src="js/magnific-popup.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
-    
-  <script>
-    var slideIndex = 0;
-    var slides = document.getElementsByClassName("slideshow-image");
 
-    function showSlide() {
-      for (var i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-
-      slideIndex++;
-
-      if (slideIndex > slides.length) {
-        slideIndex = 1;
-      }
-
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlide, 5000); // Change slide every 2 seconds
-    }
-
-    showSlide();
-  </script>
     <!--/Javascript files-->
-    <style>
-    .slideshow-container {
-      position: relative;
-      height: 300px;
-    }
-    
-    .slideshow-image {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  </style>
   </head>
   <body>
     <div id="wrapper">
@@ -141,7 +107,7 @@
                   <center> <p style= "font-size: 28px;"> Welcome to my page &#x1f60a;</center> 
                   <center> <p style="color: red;font-style: italic; font-size: 14px;"> Scroll through this page to know more about me </p>
                   <div style="display: flex; flex-direction: column; align-items: center;">
-                    <img alt="image" src="img/BH_Final.jpg" class="img-responsive" style="width: 400px; height: 400px;">
+<!--                     <img alt="image" src="img/BH_Final.jpg" class="img-responsive" style="width: 400px; height: 400px;"> -->
                     <p align="justify"> 
                     <p style="font-style: italic; font-size: 14px;"> Image Processing of the black hole (Galaxy M87,Virgo cluster) picture captured by the Event Horizon Telescope (EHT)
                     <p style="font-style: italic; font-size: 14px;"> <a href="https://www.behance.net/gallery/174861271/Image-Processing-Algorithms-on-the-Blackhole-image" target="_blank"> HDimages </a> <a href="https://github.com/sprasadhpy/Image-processing--Algorithms-Blackhole" target="_blank">| Code </a>
