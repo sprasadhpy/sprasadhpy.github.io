@@ -32,41 +32,45 @@
     <script type="text/javascript" src="js/magnific-popup.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
     
-  <script>
-    var slideIndex = 0;
-    var slides = document.getElementsByClassName("slideshow-image");
-
-    function showSlide() {
-      for (var i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-
-      slideIndex++;
-
-      if (slideIndex > slides.length) {
-        slideIndex = 1;
-      }
-
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlide, 5000); // Change slide every 2 seconds
-    }
-
-    showSlide();
-  </script>
+  
     <!--/Javascript files-->
     <style>
-    .slideshow-container {
-      position: relative;
-      height: 300px;
-    }
-    
-    .slideshow-image {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  </style>
+      .image-gallery {
+        position: relative;
+        text-align: center;
+        width: 50%;
+      
+      }
+      
+      #prevBtn,
+      #nextBtn {
+        position: absolute;
+        top: 50%;
+        font-size: 24px;
+        padding: 10px;
+        background-color: #ddd;
+        border: none;
+        color: #333;
+        cursor: pointer;
+        transform: translateY(-50%);
+      }
+      
+      #prevBtn {
+        left: 10px;
+      }
+      
+      #nextBtn {
+        right: 10px;
+      }
+      
+      #imageDisplay {
+        max-width: 400px;
+        height: auto;
+        margin: 0 auto;
+      }
+      
+      
+      </style>
   </head>
   <body>
     <div id="wrapper">
@@ -141,7 +145,12 @@
                   <center> <p style= "font-size: 28px;"> Welcome to my page &#x1f60a;</center> 
                   <center> <p style="color: red;font-style: italic; font-size: 14px;"> Scroll through this page to know more about me </p>
                   <div style="display: flex; flex-direction: column; align-items: center;">
-                    <img alt="image" src="img/BH_Final.jpg" class="img-responsive" style="width: 400px; height: 400px;">
+                    <!-- <img alt="image" src="img/BH_Final.jpg" class="img-responsive" style="width: 400px; height: 400px;"> -->
+                    <div class="image-gallery">
+                      <button id="prevBtn">&lt;</button>
+                      <img id="imageDisplay" src="bh1.png" alt="Image" >
+                      <button id="nextBtn">&gt;</button>
+                    </div>
                     <p align="justify"> 
                     <p style="font-style: italic; font-size: 14px;"> Image Processing of the black hole (Galaxy M87,Virgo cluster) picture captured by the Event Horizon Telescope (EHT)
                     <p style="font-style: italic; font-size: 14px;"> <a href="https://www.behance.net/gallery/174861271/Image-Processing-Algorithms-on-the-Blackhole-image" target="_blank"> HDimages </a> <a href="https://github.com/sprasadhpy/Image-processing--Algorithms-Blackhole" target="_blank">| Code </a>
@@ -804,5 +813,30 @@
             <!--<div class="section color-2"><div class="section-container"><div class="row"><div class="title text-center"><h3></h3></div><ul class="ul-dates-gray"><li><div class="dates"><span></span><span></span></div><div class="content"><h4></h4><p></p></div></li><li><div class="dates"><span></span><span></span></div><div class="content"><h4></h4><p></p></div></li><li><div class="dates"><span></span><span></span></div><div class="content"><h4></h4><p></p></div></li><li><div class="dates"><span></span><span></span></div><div class="content"><h4>Endodontics Postdoctoral AEGD Program</h4><p></p></div></li><li><div class="dates"><span>2011</span><span>2010</span></div><div class="content"><h4>Endodontics Postdoctoral AEGD Program</h4><p></p></div></li></ul></div></div></div>//-->
           </div>
     </div>
+    <script>
+      var images = ['bh1.png', 'bh2.png', 'bh3.png'];
+  var currentIndex = 0;
+  var imageDisplay = document.getElementById('imageDisplay');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  
+  function showImage(index) {
+    imageDisplay.src = images[index];
+  }
+  
+  prevBtn.addEventListener('click', function() {
+    currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+    showImage(currentIndex);
+  });
+  
+  nextBtn.addEventListener('click', function() {
+    currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+    showImage(currentIndex);
+  });
+  
+  // Show the initial image
+  showImage(currentIndex);
+  
+    </script>
   </body>
 </html>
