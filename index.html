@@ -38,7 +38,7 @@
       .image-gallery {
         position: relative;
         text-align: center;
-        width: 50%;
+        width: 34em;
       
       }
       
@@ -87,7 +87,7 @@
           </div>
         </div>
         <ul id="navigation">
-          <li>
+          <li class="click_colour_change">
             <a href="#biography">
               <div class="icon icon-user"></div>
               <div class="text">About Me</div>
@@ -95,20 +95,20 @@
           </li>
 
           
-          <li>
+          <li class="click_colour_change">
             <a href="#educationexperience">
               <div class="icon icon-book"></div>
               <div class="text">Education & Experience</div>
             </a>
           </li>
 
-          <li>
+          <li class="click_colour_change">
             <a href="#research">
               <div class="icon icon-laptop"></div>
               <div class="text">Conferences/Workshops</div>
             </a>
           </li>
-          <li>
+          <li class="click_colour_change">
             <a href="#publications">
              
               <div class="icon icon-edit"></div>
@@ -117,7 +117,7 @@
           </li>
           
 
-          <li>
+          <li class="click_colour_change">
             <a href="#coursework">
               <div class="icon icon-globe"></div>
               <div class="text">Skill Sets</div>
@@ -125,24 +125,29 @@
           </li>
 
 
-          <li>
+          <li class="click_colour_change">
             <a href="#projects">
               <div class="icon icon-star"></div>
               <div class="text">Projects</div>
             </a>
           </li>
-          <li>
+          <li class="click_colour_change">
             <a href="#ResearchInterests">
               <div class="icon icon-cloud"></div>
               <div class="text">Research Interests</div>
             </a>
           </li>
-          <li>
+          <li class="click_colour_change">
             <a href="#gallery">
               <div class="icon icon-picture"></div>
               <div class="text">Gallery</div>
             </a>
           </li>
+
+
+        
+
+
         </ul>
       </div>
     </div>
@@ -870,5 +875,42 @@
   showImage(currentIndex);
   
     </script>
+
+
+
+<!--<script>
+  var colour = "#FF0000";
+  document.querySelector(".click_colour_change-lap").addEventListener("click", colour_change);
+
+  function colour_change() {
+  
+    document.querySelector(".icon-laptop").style.color = colour;
+  }
+</script>-->
+
+<script>
+  var colour = "#03CC85";
+  
+  // Select all elements with the class 'click_colour_change'
+  var navItems = document.querySelectorAll(".click_colour_change");
+
+  // Add a click event listener to each navigation item
+  navItems.forEach(function(item) {
+    item.addEventListener("click", colour_change);
+  });
+
+  function colour_change() {
+    // Reset all items' color to white
+    navItems.forEach(function(item) {
+      item.querySelector(".icon").style.color = "#FFFFFF"; // White color
+    });
+
+    // Change the color of the clicked item to red
+    this.querySelector(".icon").style.color = colour;
+  }
+</script>
+
+
+
   </body>
 </html>
