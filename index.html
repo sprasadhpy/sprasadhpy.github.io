@@ -3,455 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shyaam Prasadh | AI Research Engineer</title>
+    <title>Shyaam Prasadh | Enterprise AI Engineering Leader</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0f0f0f;
-            color: #e0e0e0;
+            background: #fff;
+            color: #2d2d2d;
             line-height: 1.7;
             overflow-x: hidden;
         }
 
-        /* Navigation */
+        /* Nav */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(15, 15, 15, 0.9);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.3s ease;
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
         }
-
         .nav-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1200px; margin: 0 auto; padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
         }
-
-        .nav-logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #fff;
-            letter-spacing: -0.02em;
-        }
-
-        .nav-logo span {
-            color: #4ecdc4;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
+        .nav-logo { font-size: 1.2rem; font-weight: 700; color: #1a1a1a; }
+        .nav-logo span { color: #7c3aed; }
+        .nav-links { display: flex; gap: 1.8rem; list-style: none; }
         .nav-links a {
-            color: #888;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            transition: color 0.3s ease;
-            position: relative;
+            color: #666; text-decoration: none; font-size: 0.83rem;
+            font-weight: 500; transition: color 0.3s; position: relative;
         }
-
         .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #4ecdc4;
-            transition: width 0.3s ease;
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: #7c3aed; transition: width 0.3s;
         }
-
-        .nav-links a:hover {
-            color: #fff;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-links a.active {
-            color: #4ecdc4;
-        }
-
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        /* Hamburger */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 2px;
-            background: #fff;
-            transition: all 0.3s;
-        }
+        .nav-links a:hover, .nav-links a.active { color: #7c3aed; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+        .hamburger span { width: 25px; height: 2px; background: #1a1a1a; }
 
         /* Sections */
-        section {
-            min-height: 100vh;
-            padding: 8rem 2rem 4rem;
-            max-width: 1000px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+        .section {
+            padding: 5rem 2rem; max-width: 1200px; margin: 0 auto;
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
         }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .section.visible { opacity: 1; transform: translateY(0); }
+        .section-title {
+            font-size: 1.8rem; font-weight: 700; color: #1a1a1a;
+            margin-bottom: 0.4rem; display: inline-block;
         }
+        .section-title::after {
+            content: ''; display: block; width: 35px; height: 3px;
+            background: #7c3aed; margin-top: 0.4rem; border-radius: 2px;
+        }
+        .section-sub { color: #888; font-size: 0.88rem; margin-bottom: 2.5rem; }
 
         /* Hero */
         #hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-top: 0;
+            min-height: 100vh; padding-top: 130px;
+            max-width: 1200px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem;
         }
-
+        .hero-top { margin-bottom: 2.5rem; }
         .hero-greeting {
-            font-size: 1rem;
-            color: #4ecdc4;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
+            font-size: 0.85rem; color: #7c3aed; letter-spacing: 0.12em;
+            text-transform: uppercase; margin-bottom: 0.6rem;
         }
-
         .hero-name {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 800;
-            color: #fff;
-            line-height: 1.1;
-            margin-bottom: 1rem;
+            font-size: clamp(2.8rem, 6vw, 4.2rem); font-weight: 800;
+            color: #1a1a1a; line-height: 1.05; margin-bottom: 0.5rem;
         }
-
         .hero-title {
-            font-size: clamp(1.2rem, 3vw, 1.6rem);
-            color: #888;
-            font-weight: 300;
-            margin-bottom: 2rem;
+            font-size: clamp(1rem, 2.2vw, 1.25rem); color: #555; font-weight: 400;
         }
 
+        /* Impact Metrics */
+        .metrics-row {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.2rem; margin: 2.5rem 0; padding: 2rem 0;
+            border-top: 1px solid #eee; border-bottom: 1px solid #eee;
+        }
+        .metric { text-align: center; }
+        .metric .val {
+            font-size: 1.5rem; font-weight: 800; color: #7c3aed; display: block;
+        }
+        .metric .lbl {
+            font-size: 0.72rem; color: #777; text-transform: uppercase;
+            letter-spacing: 0.04em; margin-top: 0.2rem;
+        }
+
+        /* Hero Grid */
+        .hero-grid {
+            display: grid; grid-template-columns: 1.4fr 1fr; gap: 3.5rem;
+            align-items: start; margin-top: 2rem;
+        }
         .hero-bio {
-            font-size: 1rem;
-            color: #aaa;
-            max-width: 700px;
-            line-height: 1.8;
-            margin-bottom: 2.5rem;
+            font-size: 0.95rem; color: #444; line-height: 1.85; margin-bottom: 1.3rem;
+            max-width: 850px;
         }
-
-        .hero-links {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
+        .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
         .hero-links a {
-            color: #4ecdc4;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            padding: 0.5rem 1.2rem;
-            border: 1px solid rgba(78, 205, 196, 0.3);
-            border-radius: 6px;
-            transition: all 0.3s ease;
+            color: #7c3aed; text-decoration: none; font-size: 0.83rem; font-weight: 500;
+            padding: 0.45rem 1.1rem; border: 1px solid rgba(124,58,237,0.3);
+            border-radius: 6px; transition: all 0.3s;
         }
-
         .hero-links a:hover {
-            background: rgba(78, 205, 196, 0.1);
-            border-color: #4ecdc4;
-            transform: translateY(-2px);
+            background: rgba(124,58,237,0.07); border-color: #7c3aed; transform: translateY(-2px);
         }
 
-        /* Section Headers */
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 0.5rem;
-            position: relative;
-            display: inline-block;
+        /* Agent Animation */
+        .agent-panel {
+            background: #fafafa; border: 1px solid #eee; border-radius: 14px;
+            padding: 2rem 1.5rem; text-align: center;
+        }
+        .agent-panel h4 {
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em;
+            color: #7c3aed; margin-bottom: 1.2rem;
+        }
+        .agent-node-svg circle {
+            fill: #fff; stroke: #7c3aed; stroke-width: 2; transition: all 0.4s;
+        }
+        .agent-node-svg circle.active {
+            fill: #7c3aed; filter: drop-shadow(0 0 10px rgba(124,58,237,0.5));
+        }
+        .agent-node-svg .node-label {
+            font-size: 10px; font-weight: 700; fill: #7c3aed; transition: fill 0.4s;
+            font-family: inherit;
+        }
+        .agent-node-svg circle.active + .node-label { fill: #fff; }
+        .agent-node-svg .node-text {
+            font-size: 11px; fill: #666; font-family: inherit; transition: all 0.3s;
+        }
+        .agent-node-svg .node-text.active { fill: #7c3aed; font-weight: 600; }
+        .agent-version {
+            font-size: 0.85rem; color: #7c3aed; font-weight: 700;
+            margin-top: 0.8rem; transition: all 0.3s;
+        }
+        .agent-caption {
+            font-size: 0.78rem; color: #888; margin-top: 0.5rem; font-style: italic;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 3px;
-            background: #4ecdc4;
-            margin-top: 0.5rem;
-            border-radius: 2px;
+        /* Missions */
+        .missions-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem; margin-top: 2rem;
         }
+        .mission-card {
+            background: #fafafa; border: 1px solid #eee; border-radius: 12px;
+            padding: 1.8rem; transition: all 0.3s;
+        }
+        .mission-card:hover {
+            border-color: rgba(124,58,237,0.25); transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(124,58,237,0.07);
+        }
+        .mission-card h4 { color: #1a1a1a; font-size: 1rem; margin-bottom: 0.3rem; }
+        .mission-card .tag { color: #7c3aed; font-size: 0.8rem; margin-bottom: 0.5rem; }
+        .mission-card p { color: #666; font-size: 0.88rem; line-height: 1.6; }
 
-        .section-subtitle {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 3rem;
+        /* Vision */
+        .vision-stages {
+            display: flex; gap: 2rem; justify-content: center;
+            flex-wrap: wrap; margin: 2.5rem 0;
         }
-
-        /* Cards */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+        .vision-stage {
+            text-align: center; padding: 1.5rem 2rem; border-radius: 10px;
+            background: #fafafa; border: 1px solid #eee; min-width: 200px;
+            transition: all 0.3s;
         }
-
-        .card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 12px;
-            padding: 1.8rem;
-            transition: all 0.3s ease;
+        .vision-stage.active-stage { border-color: #7c3aed; background: rgba(124,58,237,0.03); }
+        .vision-stage .emoji { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .vision-stage h4 { font-size: 0.9rem; color: #1a1a1a; margin-bottom: 0.3rem; }
+        .vision-stage p { font-size: 0.78rem; color: #666; }
+        .vision-scale {
+            display: flex; justify-content: center; align-items: center;
+            gap: 1rem; margin-top: 2rem; flex-wrap: wrap;
         }
-
-        .card:hover {
-            border-color: rgba(78, 205, 196, 0.2);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        .vision-scale .step {
+            padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.82rem;
+            font-weight: 600; background: #f5f0ff; color: #7c3aed; transition: all 0.5s;
         }
-
-        .card h4 {
-            color: #fff;
-            font-size: 1.05rem;
-            margin-bottom: 0.3rem;
+        .vision-scale .step.glow {
+            background: #7c3aed; color: #fff; box-shadow: 0 0 15px rgba(124,58,237,0.4);
         }
-
-        .card .meta {
-            color: #4ecdc4;
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .card p {
-            color: #888;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
+        .vision-arrow { color: #ccc; font-size: 1.2rem; }
 
         /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-            margin-top: 2rem;
-        }
-
+        .timeline { position: relative; padding-left: 1.8rem; margin-top: 2rem; }
         .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: linear-gradient(to bottom, #4ecdc4, transparent);
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+            width: 1px; background: linear-gradient(to bottom, #7c3aed, transparent);
         }
+        .tl-item { position: relative; margin-bottom: 2rem; padding-left: 1.5rem; }
+        .tl-item::before {
+            content: ''; position: absolute; left: -1.8rem; top: 0.4rem;
+            width: 8px; height: 8px; border-radius: 50%; background: #7c3aed;
+            box-shadow: 0 0 8px rgba(124,58,237,0.3);
+        }
+        .tl-item h4 { color: #1a1a1a; font-size: 0.95rem; margin-bottom: 0.15rem; }
+        .tl-item .co { color: #7c3aed; font-size: 0.82rem; }
+        .tl-item .dt { color: #999; font-size: 0.78rem; margin-bottom: 0.4rem; }
+        .tl-item p { color: #555; font-size: 0.88rem; line-height: 1.7; }
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2.5rem;
-            padding-left: 1.5rem;
+        /* Impact Cards */
+        .impact-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem; margin-top: 2rem;
         }
+        .impact-card {
+            text-align: center; padding: 2rem 1.5rem; background: #fafafa;
+            border: 1px solid #eee; border-radius: 12px;
+        }
+        .impact-card .num { font-size: 1.8rem; font-weight: 800; color: #7c3aed; }
+        .impact-card .desc { font-size: 0.8rem; color: #666; margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.03em; }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2rem;
-            top: 0.5rem;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #4ecdc4;
-            box-shadow: 0 0 10px rgba(78, 205, 196, 0.4);
-        }
-
-        .timeline-item h4 {
-            color: #fff;
-            font-size: 1rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .timeline-item .company {
-            color: #4ecdc4;
-            font-size: 0.85rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .timeline-item .period {
-            color: #555;
-            font-size: 0.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-item p {
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        /* Publications */
-        .pub-item {
-            padding: 1.5rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .pub-item:last-child {
-            border-bottom: none;
-        }
-
-        .pub-item h4 {
-            color: #fff;
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-        }
-
-        .pub-item .authors {
-            color: #888;
-            font-size: 0.85rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .pub-item .journal {
-            color: #4ecdc4;
-            font-size: 0.85rem;
-            font-style: italic;
-        }
-
-        .pub-item a {
-            color: #4ecdc4;
-            text-decoration: none;
-            font-size: 0.8rem;
-            margin-left: 0.5rem;
-        }
+        /* Pubs */
+        .pub-item { padding: 1.2rem 0; border-bottom: 1px solid #f0f0f0; }
+        .pub-item:last-child { border-bottom: none; }
+        .pub-item h4 { color: #1a1a1a; font-size: 0.92rem; font-weight: 600; margin-bottom: 0.2rem; }
+        .pub-item .authors { color: #555; font-size: 0.83rem; }
+        .pub-item .journal { color: #7c3aed; font-size: 0.83rem; font-style: italic; }
+        .pub-item a { color: #7c3aed; text-decoration: none; font-size: 0.78rem; margin-left: 0.4rem; }
 
         /* Awards */
-        .awards-list {
-            list-style: none;
-            margin-top: 2rem;
-        }
-
+        .awards-list { list-style: none; margin-top: 1.5rem; }
         .awards-list li {
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            color: #bbb;
-            font-size: 0.95rem;
-            position: relative;
-            padding-left: 1.5rem;
+            padding: 0.8rem 0 0.8rem 1.5rem; border-bottom: 1px solid #f0f0f0;
+            color: #333; font-size: 0.92rem; position: relative;
         }
-
         .awards-list li::before {
-            content: '◆';
-            position: absolute;
-            left: 0;
-            color: #4ecdc4;
-            font-size: 0.6rem;
-            top: 1.2rem;
+            content: '◆'; position: absolute; left: 0; color: #7c3aed; font-size: 0.55rem; top: 1rem;
         }
 
         /* Skills */
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem; margin-top: 2rem;
         }
-
-        .skill-category h4 {
-            color: #4ecdc4;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.8rem;
+        .skill-cat h4 {
+            color: #7c3aed; font-size: 0.8rem; text-transform: uppercase;
+            letter-spacing: 0.05em; margin-bottom: 0.6rem;
         }
-
-        .skill-category p {
-            color: #888;
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
+        .skill-cat p { color: #555; font-size: 0.88rem; line-height: 1.8; }
 
         /* Contact */
-        .contact-info {
-            margin-top: 2rem;
-        }
-
-        .contact-info p {
-            color: #888;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-info a {
-            color: #4ecdc4;
-            text-decoration: none;
-        }
+        .contact-info { margin-top: 1.5rem; }
+        .contact-info p { color: #444; font-size: 0.95rem; margin-bottom: 0.8rem; }
+        .contact-info a { color: #7c3aed; text-decoration: none; }
 
         /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem 2rem;
-            color: #444;
-            font-size: 0.8rem;
-            border-top: 1px solid rgba(255,255,255,0.03);
-        }
+        footer { text-align: center; padding: 3rem 2rem; color: #999; font-size: 0.78rem; border-top: 1px solid #f0f0f0; }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .metrics-row { grid-template-columns: repeat(2, 1fr); }
             .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(15, 15, 15, 0.98);
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
+                display: none; position: absolute; top: 100%; left: 0; right: 0;
+                background: rgba(255,255,255,0.98); flex-direction: column; padding: 2rem; gap: 1.5rem;
             }
-
-            .nav-links.open {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            section {
-                padding: 6rem 1.5rem 3rem;
-            }
-
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
+            .nav-links.open { display: flex; }
+            .hamburger { display: flex; }
         }
     </style>
 </head>
@@ -462,290 +272,344 @@
         <div class="nav-logo">SP<span>.</span></div>
         <ul class="nav-links" id="navLinks">
             <li><a href="#hero">Home</a></li>
+            <li><a href="#missions">Missions</a></li>
+            <li><a href="#vision">Vision</a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="#impact">Impact</a></li>
             <li><a href="#publications">Publications</a></li>
-            <li><a href="#projects">Projects</a></li>
             <li><a href="#awards">Awards</a></li>
-            <li><a href="#skills">Skills</a></li>
+            <li><a href="https://sprasadhpy.github.io/myAInotes/" target="_blank">myAInotes</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="hamburger" id="hamburger">
-            <span></span><span></span><span></span>
-        </div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
     </div>
 </nav>
 
-<section id="hero" class="visible">
-    <p class="hero-greeting">Hello, I'm</p>
-    <h1 class="hero-name">Shyaam Prasadh</h1>
-    <p class="hero-title">AI Research Engineer · Multi-Agent Systems · Computational Finance</p>
-    <p class="hero-bio">
-        I design agentic AI systems that reason, act, and collaborate autonomously across high-stakes domains like finance and robotics. 
-        Currently a founding AI Research Engineer at <strong>Veer</strong> (Oxford spinout), engineering multi-agent trading pipelines for buy-side institutions. 
-        Ph.D. in Computational Finance from IIT Madras. MSc in Machine Learning from UCL as a Google DeepMind Fellow. 
-        UK Global Talent Visa holder endorsed by the Royal Academy of Engineering.
-    </p>
-    <div class="hero-links">
-        <a href="https://www.linkedin.com/in/sprasadh/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/sprasadhpy" target="_blank">GitHub</a>
-        <a href="https://scholar.google.com/citations?user=_D7dX6IAAAAJ&hl=en" target="_blank">Scholar</a>
-        <a href="https://sprasadhpy.github.io/myAInotes/" target="_blank">myAInotes</a>
+<!-- HERO -->
+<div id="hero">
+    <div class="hero-top">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Shyaam Prasadh</h1>
+        <p class="hero-title">Enterprise AI Engineering Leader at Entain (FTSE 100)</p>
+        <p class="hero-title" style="margin-top:0.3rem; font-size:0.95rem; color:#7c3aed;">Building Self-Evolving Agent Systems for Trading and Risk</p>
     </div>
-</section>
 
-<section id="experience">
+    <div class="metrics-row">
+        <div class="metric"><span class="val">250M+</span><span class="lbl">Tokens Processed</span></div>
+        <div class="metric"><span class="val">£42M+</span><span class="lbl">Business Impact</span></div>
+        <div class="metric"><span class="val">25,000+</span><span class="lbl">Employees Supported</span></div>
+        <div class="metric"><span class="val">4</span><span class="lbl">Global Regions</span></div>
+        <div class="metric"><span class="val">$2B+</span><span class="lbl">Quant Research AUM</span></div>
+        <div class="metric"><span class="val">10+</span><span class="lbl">Years Experience</span></div>
+    </div>
+
+    <div class="hero-grid">
+        <div class="hero-text">
+            <p class="hero-bio">
+                I lead the Enterprise AI Engineering function at <strong>Entain</strong> (FTSE 100), with responsibility across the UK &amp; Ireland, Latin America, Central Europe, and Asia Pacific regions. I architect and deploy large-scale AI, machine learning, and agentic systems for one of the world's largest sports betting, gaming, and interactive entertainment organisations. Reporting to the Global Head of AI and senior executive leadership, I lead globally distributed teams of Principal Data Scientists and ML Engineers, delivering production-grade AI capabilities at enterprise scale.
+            </p>
+            <p class="hero-bio">
+                I currently lead development of <strong>Prometheus</strong> (Entain's enterprise GenAI platform), <strong>EntainGPT</strong> (a suite of LLM-powered services) — both empower 25K employees. AgenticOps for autonomous incident management, self-evolving AI agents for trading and data science workflows, reduction of false positives in fraud analytics systems (BVerified), and gaming personalisation using Transformer-based models. These projects process large volumes of real-time data and automate complex decision workflows, generating multi-million GBP commercial impact.
+            </p>
+            <p class="hero-bio">
+                Previously, at <strong>Trexquant Investments</strong> ($4B AUM) I developed ML-driven statistical arbitrage signals that generated alphas and outperformed benchmarks in live trading environments. As a Founding AI Engineer at <strong>Veer</strong>, I built agentic AI systems for trading diagnostics in complex trading environments. At <strong>Elan Capital Management</strong>, I developed GenAI-driven models for yield curve analysis, applying machine learning to extract structure and signals from fixed income data. At <strong>Ford Motor Company</strong>, I led the development of production-grade, interpretable risk models managing multi-million-dollar exposure.
+            </p>
+            <p class="hero-bio">
+                I hold a PhD in Computational Finance (<strong>IIT Madras</strong>), an MSc in Machine Learning with Distinction (<strong>UCL</strong>) supported by a Google DeepMind Fellowship. I also contribute to multi-agent research at UCL Computer Science.
+            </p>
+            <div class="hero-links">
+                <a href="https://www.linkedin.com/in/sprasadh/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/sprasadhpy" target="_blank">GitHub</a>
+                <a href="https://scholar.google.com/citations?user=_D7dX6IAAAAJ&hl=en" target="_blank">Scholar</a>
+                <a href="https://sprasadhpy.github.io/myAInotes/" target="_blank">myAInotes</a>
+            </div>
+        </div>
+
+        <div class="agent-panel">
+            <h4>Self-Evolving Agent Ecosystem</h4>
+            <svg class="agent-node-svg" width="100%" viewBox="0 0 220 400">
+                <line x1="110" y1="48" x2="110" y2="88" stroke="#e0e0e0" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <line x1="110" y1="112" x2="110" y2="148" stroke="#e0e0e0" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <line x1="110" y1="172" x2="110" y2="208" stroke="#e0e0e0" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <line x1="110" y1="232" x2="110" y2="268" stroke="#e0e0e0" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <line x1="110" y1="292" x2="110" y2="328" stroke="#e0e0e0" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <path d="M 110 355 Q 110 380, 50 380 Q 15 380, 15 300 Q 15 30, 60 30 Q 80 30, 110 30" fill="none" stroke="rgba(124,58,237,0.2)" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <polygon points="105,25 110,30 105,35" fill="rgba(124,58,237,0.35)"/>
+
+                <circle id="n-observe" cx="110" cy="35" r="13"/><text x="110" y="39" text-anchor="middle" class="node-label">O</text><text x="145" y="39" class="node-text" id="t-observe">Observe</text>
+                <circle id="n-reason" cx="110" cy="100" r="13"/><text x="110" y="104" text-anchor="middle" class="node-label">R</text><text x="145" y="104" class="node-text" id="t-reason">Reason</text>
+                <circle id="n-plan" cx="110" cy="160" r="13"/><text x="110" y="164" text-anchor="middle" class="node-label">P</text><text x="145" y="164" class="node-text" id="t-plan">Plan</text>
+                <circle id="n-execute" cx="110" cy="220" r="13"/><text x="110" y="224" text-anchor="middle" class="node-label">X</text><text x="145" y="224" class="node-text" id="t-execute">Execute</text>
+                <circle id="n-reflect" cx="110" cy="280" r="13"/><text x="110" y="284" text-anchor="middle" class="node-label">R</text><text x="145" y="284" class="node-text" id="t-reflect">Reflect</text>
+                <circle id="n-evolve" cx="110" cy="340" r="13"/><text x="110" y="344" text-anchor="middle" class="node-label">E</text><text x="145" y="344" class="node-text" id="t-evolve">Evolve</text>
+            </svg>
+            <div class="agent-version" id="agent-ver">Agent v1</div>
+            <p class="agent-caption">Autonomous systems that learn, adapt, and evolve.</p>
+        </div>
+    </div>
+</div>
+
+<!-- CURRENT MISSIONS -->
+<div id="missions" class="section">
+    <h2 class="section-title">Current Missions</h2>
+    <p class="section-sub">What I'm building right now</p>
+    <div class="missions-grid">
+        <div class="mission-card">
+            <h4>Prometheus</h4>
+            <p class="tag">Enterprise AI Platform</p>
+            <p>Trading, risk, and operational intelligence powering Entain's global decision-making infrastructure.</p>
+        </div>
+        <div class="mission-card">
+            <h4>EntainGPT</h4>
+            <p class="tag">25,000 Employees · 250M+ Tokens</p>
+            <p>Suite of LLM-powered services for compliance, operations, and enterprise knowledge with multi-million GBP impact.</p>
+        </div>
+        <div class="mission-card">
+            <h4>AgenticOps</h4>
+            <p class="tag">Autonomous Incident Management</p>
+            <p>Self-healing systems with hierarchical memory, safety filters, and sub-3s latency for production reliability.</p>
+        </div>
+        <div class="mission-card">
+            <h4>Self-Evolving Agents</h4>
+            <p class="tag">Trading · Data Science · Decision Intelligence</p>
+            <p>Agents that learn continuously, adapt reasoning, and operate as scalable autonomous organizations.</p>
+        </div>
+    </div>
+</div>
+
+<!-- FUTURE VISION -->
+<div id="vision" class="section">
+    <h2 class="section-title">The Future I Am Building</h2>
+    <p class="section-sub">From copilots to autonomous organizations</p>
+    <div class="vision-stages">
+        <div class="vision-stage" id="vs-today">
+            <div class="emoji">👤→🤖</div>
+            <h4>Today's AI</h4>
+            <p>Human → AI Tool</p>
+        </div>
+        <div class="vision-stage" id="vs-tomorrow">
+            <div class="emoji">👤→🤖🤖🤖</div>
+            <h4>Tomorrow's AI</h4>
+            <p>Human → Agent Team</p>
+        </div>
+        <div class="vision-stage" id="vs-future">
+            <div class="emoji">👤→🏢</div>
+            <h4>The Future</h4>
+            <p>Human → Autonomous Organization</p>
+        </div>
+    </div>
+    <div class="vision-scale">
+        <span class="step" id="sc-1">1 Agent</span>
+        <span class="vision-arrow">→</span>
+        <span class="step" id="sc-5">5 Agents</span>
+        <span class="vision-arrow">→</span>
+        <span class="step" id="sc-25">25 Agents</span>
+        <span class="vision-arrow">→</span>
+        <span class="step" id="sc-100">100 Agents</span>
+    </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div id="experience" class="section">
     <h2 class="section-title">Experience</h2>
-    <p class="section-subtitle">Where I've worked and contributed</p>
-
+    <p class="section-sub">Career trajectory</p>
     <div class="timeline">
-        <div class="timeline-item">
-            <h4>Founding AI Research Engineer</h4>
-            <div class="company">Veer (Oxford Spinout)</div>
-            <div class="period">2024 – Present</div>
-            <p>Engineering multi-agent trading pipelines for buy-side institutions. Core contributor to AgentOps, advancing tooling and observability for autonomous agents.</p>
+        <div class="tl-item">
+            <h4>Manager, Applied AI Engineering</h4>
+            <div class="co">Entain (FTSE 100)</div>
+            <div class="dt">Sep 2025 – Present · London, UK</div>
+            <p>Leading global AI &amp; ML team delivering enterprise GenAI. Own EntainGPT, Prometheus, LLMOps, multi-agent systems, fraud intelligence, personalization, and strategic partnerships (AWS Bedrock, Slalom, academia). 25K users, multi-million impact.</p>
         </div>
-        <div class="timeline-item">
-            <h4>Research Staff</h4>
-            <div class="company">UCL Robotics</div>
-            <div class="period">2023 – Present</div>
-            <p>Developing embodied agents capable of hierarchical planning, cooperative execution, and task decomposition. VLA-RL hybrid architectures for multi-agent coordination.</p>
+        <div class="tl-item">
+            <h4>Founding AI Engineer (Agentic AIOps)</h4>
+            <div class="co">Veer (Oxford AI Spinout)</div>
+            <div class="dt">Oct 2024 – Sep 2025 · London, UK</div>
+            <p>Core team reporting to CTO Dr. Max Van Kleek (Oxford). Autonomous trading agents, AgentOps, rule-based alignment, multi-objective optimization, sub-3s latency infrastructure.</p>
         </div>
-        <div class="timeline-item">
-            <h4>Deputy Manager & ML Architect</h4>
-            <div class="company">Ford Motor Company (GDIA)</div>
-            <div class="period">2021 – 2023</div>
-            <p>Led model architecture and validation frameworks supporting global teams. Presented at Ford's Palo Alto AI/ML Summit (Andrew Ng keynote).</p>
+        <div class="tl-item">
+            <h4>AI Research Intern</h4>
+            <div class="co">Elan Capital Management</div>
+            <div class="dt">Jun 2024 – Sep 2024 · London, UK</div>
+            <p>Generative models for sovereign yield curves. State space models and intelligent parsers for HFT central bank document analysis.</p>
         </div>
-        <div class="timeline-item">
+        <div class="tl-item">
+            <h4>Deputy Manager – ML Engineering</h4>
+            <div class="co">Ford Motor Company</div>
+            <div class="dt">Jun 2022 – Sep 2023 · Chennai</div>
+            <p>Promoted to ML Architect. End-to-end pipelines on GCP, interpretable GAMs, ensemble credit risk models, mechanistic interpretability, SHAP/LIME. Presented at Ford AI/ML Conference (Andrew Ng keynote).</p>
+        </div>
+        <div class="tl-item">
+            <h4>Machine Learning Engineer</h4>
+            <div class="co">Ford Motor Company</div>
+            <div class="dt">Feb 2021 – Jun 2022 · Chennai</div>
+            <p>Credit risk validation (PD, LGD, EAD) under IFRS9. Model monitoring, drift detection, auto loan models for France &amp; Italy. FINMA/PRA/FRB compliance.</p>
+        </div>
+        <div class="tl-item">
             <h4>Quantitative Researcher (Equities)</h4>
-            <div class="company">Trexquant Investments LP ($2B AUM)</div>
-            <div class="period">2019 – 2020</div>
-            <p>Engineered ML-driven equity strategies with consistent outperformance. Won Best Alpha Research award (Global 3rd, India 1st).</p>
+            <div class="co">Trexquant Investment LP ($2B+ AUM)</div>
+            <div class="dt">Jun 2019 – Jan 2021 · Stamford, CT</div>
+            <p>Daily long-short strategies across US, Europe, Japan, China, Asia. ML/DL macro-investing. Automated portfolio selection.</p>
         </div>
-        <div class="timeline-item">
-            <h4>Quantitative Researcher</h4>
-            <div class="company">Elan Capital</div>
-            <div class="period">2020 – 2021</div>
-            <p>Developed generative models for sovereign yield curves and deployed LLM-based parser for high-frequency trade intelligence.</p>
-        </div>
-        <div class="timeline-item">
-            <h4>Endeavour Research Fellow</h4>
-            <div class="company">Deakin University, Australia</div>
-            <div class="period">2015 – 2016</div>
-            <p>Research on cross-border acquisitions and economic freedom distance under Dr. May Hu.</p>
+        <div class="tl-item">
+            <h4>Endeavour Research Fellow in Finance</h4>
+            <div class="co">Deakin University (Australian Govt, &lt;1.5% acceptance)</div>
+            <div class="dt">Aug 2015 – Feb 2016 · Melbourne</div>
+            <p>M&amp;A research with Dr. May Hu &amp; Dr. Robert Faff (h-index: 64). ML ownership prediction (AUC ≈ 85%). Part of Australia's $1.4B research initiative.</p>
         </div>
     </div>
+</div>
 
-    <h2 class="section-title" style="margin-top: 4rem;">Education</h2>
-    <div class="card-grid" style="margin-top: 1.5rem;">
-        <div class="card">
-            <h4>MSc Machine Learning</h4>
-            <p class="meta">University College London (Distinction)</p>
-            <p>Google DeepMind Fellow. Focus on multi-agent reinforcement learning.</p>
-        </div>
-        <div class="card">
-            <h4>Ph.D. Computational Finance</h4>
-            <p class="meta">IIT Madras</p>
-            <p>Modeled merger waves using statistical learning and agent-based models.</p>
-        </div>
-        <div class="card">
-            <h4>B.Tech Information Technology</h4>
-            <p class="meta">PSG College of Technology</p>
-            <p>Foundation in computer science and software engineering.</p>
-        </div>
+<!-- SELECTED IMPACT -->
+<div id="impact" class="section">
+    <h2 class="section-title">Selected Impact</h2>
+    <p class="section-sub">Measurable outcomes</p>
+    <div class="impact-grid">
+        <div class="impact-card"><div class="num">£25M+</div><div class="desc">Personalization Impact</div></div>
+        <div class="impact-card"><div class="num">£17M+</div><div class="desc">Fraud Intelligence Value</div></div>
+        <div class="impact-card"><div class="num">250M+</div><div class="desc">Tokens Processed</div></div>
+        <div class="impact-card"><div class="num">25K+</div><div class="desc">Employees Enabled</div></div>
+        <div class="impact-card"><div class="num">4 Regions</div><div class="desc">Global AI Deployment</div></div>
+        <div class="impact-card"><div class="num">$2B+</div><div class="desc">Quant AUM Strategies</div></div>
     </div>
-</section>
+</div>
 
-<section id="publications">
+<!-- PUBLICATIONS -->
+<div id="publications" class="section">
     <h2 class="section-title">Publications</h2>
-    <p class="section-subtitle">Peer-reviewed research</p>
-
+    <p class="section-sub">Peer-reviewed research</p>
     <div class="pub-item">
-        <h4>Does country-level corruption distance affect cross-border acquisitions? A comparison of developed and emerging markets.</h4>
+        <h4>Does country-level corruption distance affect cross-border acquisitions?</h4>
         <p class="authors"><strong>Prasadh, R. S.</strong>, Thenmozhi, M., Ghosh. C, Narayan, PC (2022)</p>
-        <p class="journal">European Financial Management, 28(2), 345-402.
-            <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/eufm.12350" target="_blank">↗</a>
-        </p>
+        <p class="journal">European Financial Management, 28(2), 345-402. <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/eufm.12350" target="_blank">↗</a></p>
     </div>
     <div class="pub-item">
-        <h4>Does economic freedom distance affect long-run post acquisition performance and ownership level in cross-border acquisitions?</h4>
+        <h4>Does economic freedom distance affect long-run post acquisition performance?</h4>
         <p class="authors"><strong>Prasadh, R. S.</strong>, Thenmozhi, M., & Hu, M. (2020)</p>
-        <p class="journal">Decision, 47(2), 191-213.
-            <a href="https://link.springer.com/article/10.1007/s40622-020-00246-6" target="_blank">↗</a>
-        </p>
+        <p class="journal">Decision, 47(2), 191-213. <a href="https://link.springer.com/article/10.1007/s40622-020-00246-6" target="_blank">↗</a></p>
     </div>
     <div class="pub-item">
         <h4>Does religion affect Cross-border acquisitions?</h4>
         <p class="authors"><strong>Prasadh, R. S.</strong>, Thenmozhi, M. (2019)</p>
-        <p class="journal">Finance Research Letters, 31, 300-312.
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1544612318307827" target="_blank">↗</a>
-        </p>
+        <p class="journal">Finance Research Letters, 31, 300-312. <a href="https://www.sciencedirect.com/science/article/abs/pii/S1544612318307827" target="_blank">↗</a></p>
     </div>
     <div class="pub-item">
-        <h4>Merger and acquisition research in Asia-Pacific region: A stock take of recent evidence and future directions</h4>
+        <h4>M&A research in Asia-Pacific: A stock take and future directions</h4>
         <p class="authors"><strong>Prasadh, R. S.</strong>, Shams. S, Faff, R. (2019)</p>
-        <p class="journal">Research in International Business and Finance, 50, 267-278.
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0275531918304884" target="_blank">↗</a>
-        </p>
+        <p class="journal">Research in International Business and Finance, 50, 267-278. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0275531918304884" target="_blank">↗</a></p>
     </div>
     <div class="pub-item">
-        <h4>Assessment of the carbon footprint of four commercial dairy production systems in Australia</h4>
-        <p class="authors"><strong>Prasadh, R. S.</strong>, Sejian, V., Lees, A. M., et al. (2018)</p>
-        <p class="journal">Carbon Management, 1-14.
-            <a href="https://www.tandfonline.com/doi/full/10.1080/17583004.2017.1418595" target="_blank">↗</a>
-        </p>
+        <h4>Assessment of carbon footprint of dairy production systems in Australia</h4>
+        <p class="authors"><strong>Prasadh, R. S.</strong>, Sejian, V., et al. (2018)</p>
+        <p class="journal">Carbon Management, 1-14. <a href="https://www.tandfonline.com/doi/full/10.1080/17583004.2017.1418595" target="_blank">↗</a></p>
     </div>
-</section>
+</div>
 
-<section id="projects">
-    <h2 class="section-title">Projects</h2>
-    <p class="section-subtitle">Selected work</p>
-
-    <div class="card-grid">
-        <div class="card">
-            <h4>iPOP: Interpretable Probability of Payment</h4>
-            <p class="meta">Ford Credit</p>
-            <p>High-performing intrinsically interpretable POP model using explainable neural networks based on Generalized Additive Models with structured Interactions.</p>
-        </div>
-        <div class="card">
-            <h4>Deep Learning for Survival Analysis</h4>
-            <p class="meta">DeepSurv & DeepHit</p>
-            <p>Deep feed-forward neural network for credit contracts achieving 91.6% Concordance index in survival probability prediction.</p>
-        </div>
-        <div class="card">
-            <h4>Risk Bucketed POD Prediction</h4>
-            <p class="meta">Credit Risk</p>
-            <p>DBScan customer clustering with ML algorithms to predict loan default probabilities across risk segments.</p>
-        </div>
-        <div class="card">
-            <h4>Multi-Agent Trading Pipelines</h4>
-            <p class="meta">Veer / AgentOps</p>
-            <p>Autonomous agents for institutional trade execution with reasoning, planning, and cooperative decision-making.</p>
-        </div>
-    </div>
-</section>
-
-<section id="awards">
+<!-- AWARDS -->
+<div id="awards" class="section">
     <h2 class="section-title">Awards & Recognition</h2>
-    <p class="section-subtitle">Milestones</p>
-
+    <p class="section-sub">Milestones</p>
     <ul class="awards-list">
         <li>Google DeepMind Fellowship 2023-24</li>
-        <li>UK Global Talent Visa — endorsed by the Royal Academy of Engineering</li>
-        <li>Top Achiever FY 2021-22, Credit Risk Analytics, Ford GDIA (120% bonus)</li>
-        <li>Asia Pacific Recognition Award (2021, 2022) for Innovation in Validation, Ford International Markets</li>
-        <li>Best Alpha Research Award 2019, Trexquant Investments LP (Global 3rd, India 1st)</li>
-        <li>Best Doctoral Research Award 2018, CRISIL Doctoral Symposium (Indian Finance Association)</li>
-        <li>Endeavour Research Fellowship 2015, Australian Government (Acceptance Rate &lt; 1.5%)</li>
-        <li>Outstanding Management Research Award, PSG Tech Alumni Association 2013</li>
+        <li>UK Global Talent Visa for AI — Royal Academy of Engineering</li>
+        <li>Top Achiever FY 2021-22, Ford GDIA (120% bonus)</li>
+        <li>Asia Pacific Recognition (2021, 2022) for Innovation, Ford International Markets</li>
+        <li>Best Alpha Research Award 2019, Trexquant (Global 3rd, India 1st)</li>
+        <li>Best Doctoral Research Award 2018, CRISIL (Indian Finance Association)</li>
+        <li>Endeavour Research Fellowship 2015, Australian Government (&lt;1.5% acceptance)</li>
+        <li>Outstanding Management Research Award, PSG Tech Alumni 2013</li>
     </ul>
-</section>
+</div>
 
-<section id="skills">
+<!-- SKILLS -->
+<div id="skills" class="section">
     <h2 class="section-title">Technical Stack</h2>
-    <p class="section-subtitle">Tools and technologies</p>
-
+    <p class="section-sub">Tools and technologies</p>
     <div class="skills-grid">
-        <div class="skill-category">
-            <h4>Languages</h4>
-            <p>Python, C++, SQL, SAS</p>
-        </div>
-        <div class="skill-category">
-            <h4>ML & Deep Learning</h4>
-            <p>PyTorch, TensorFlow, DeepSpeed, Ray Tune, Optuna, Hyperopt</p>
-        </div>
-        <div class="skill-category">
-            <h4>LLM & Agents</h4>
-            <p>LangChain, LlamaIndex, Haystack, Bedrock, crewAI, FAISS, Weaviate</p>
-        </div>
-        <div class="skill-category">
-            <h4>RL & Multi-Agent</h4>
-            <p>RLlib, Ray, Graph-based reasoning, VLA-RL architectures</p>
-        </div>
-        <div class="skill-category">
-            <h4>Finance</h4>
-            <p>Pyfolio, Riskfolio, PyMC3, Pycox, Bloomberg, WRDS, CRSP</p>
-        </div>
-        <div class="skill-category">
-            <h4>Infrastructure</h4>
-            <p>GCP, BigQuery, Vertex AI, TPUs, GKE, Docker, Kubernetes, MLflow, W&B</p>
-        </div>
-        <div class="skill-category">
-            <h4>Post-Training</h4>
-            <p>RLHF, DPO, LoRA, QLoRA, Quantization, Distillation, RAG</p>
-        </div>
-        <div class="skill-category">
-            <h4>Applications</h4>
-            <p>FastAPI, Streamlit, DVC, Weights & Biases</p>
-        </div>
+        <div class="skill-cat"><h4>Languages</h4><p>Python, C++, SQL, SAS</p></div>
+        <div class="skill-cat"><h4>ML & Deep Learning</h4><p>PyTorch, TensorFlow, DeepSpeed, Ray Tune, Optuna</p></div>
+        <div class="skill-cat"><h4>LLM & Agents</h4><p>LangChain, LlamaIndex, Haystack, Bedrock, crewAI, FAISS, Weaviate</p></div>
+        <div class="skill-cat"><h4>RL & Multi-Agent</h4><p>RLlib, Ray, Graph-based reasoning, VLA-RL</p></div>
+        <div class="skill-cat"><h4>Finance</h4><p>Pyfolio, Riskfolio, PyMC3, Bloomberg, WRDS, CRSP</p></div>
+        <div class="skill-cat"><h4>Infrastructure</h4><p>GCP, AWS, BigQuery, Vertex AI, Docker, Kubernetes, MLflow, W&B</p></div>
+        <div class="skill-cat"><h4>Post-Training</h4><p>RLHF, DPO, LoRA, QLoRA, Quantization, Distillation, RAG</p></div>
+        <div class="skill-cat"><h4>Applications</h4><p>FastAPI, Streamlit, DVC, Airflow, CI/CD</p></div>
     </div>
-</section>
+</div>
 
-<section id="contact">
+<!-- CONTACT -->
+<div id="contact" class="section">
     <h2 class="section-title">Get in Touch</h2>
-    <p class="section-subtitle">Open to collaborations and research discussions</p>
-
+    <p class="section-sub">Open to collaborations and leadership conversations</p>
     <div class="contact-info">
         <p>📧 <a href="mailto:shyaam.rajan.23@ucl.ac.uk">shyaam.rajan.23@ucl.ac.uk</a></p>
         <p>📱 +919566785249 (IND) · 07768742028 (UK)</p>
         <p>
-            <a href="https://www.linkedin.com/in/sprasadh/" target="_blank">LinkedIn</a> · 
-            <a href="https://github.com/sprasadhpy" target="_blank">GitHub</a> · 
-            <a href="https://scholar.google.com/citations?user=_D7dX6IAAAAJ&hl=en" target="_blank">Google Scholar</a> · 
-            <a href="https://www.behance.net/shyaamprasadh" target="_blank">Behance</a>
+            <a href="https://www.linkedin.com/in/sprasadh/" target="_blank">LinkedIn</a> ·
+            <a href="https://github.com/sprasadhpy" target="_blank">GitHub</a> ·
+            <a href="https://scholar.google.com/citations?user=_D7dX6IAAAAJ&hl=en" target="_blank">Google Scholar</a>
         </p>
     </div>
-</section>
+</div>
 
-<footer>
-    <p>&copy; 2024 Shyaam Prasadh. Built with purpose.</p>
-</footer>
+<footer><p>&copy; 2025 Shyaam Prasadh. Built with purpose.</p></footer>
 
 <script>
-    // Smooth scroll intersection observer for fade-in
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    // Intersection Observer for fade-in
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.section').forEach(el => obs.observe(el));
 
-    document.querySelectorAll('section:not(#hero)').forEach(el => observer.observe(el));
-
-    // Active nav link on scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
+    // Active nav
+    const secs = document.querySelectorAll('[id]');
+    const navAs = document.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 120;
-            if (scrollY >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + current) {
-                link.classList.add('active');
-            }
+        let cur = '';
+        secs.forEach(s => { if (scrollY >= s.offsetTop - 130) cur = s.id; });
+        navAs.forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href') === '#' + cur) a.classList.add('active');
         });
     });
 
-    // Mobile hamburger
+    // Mobile nav
     document.getElementById('hamburger').addEventListener('click', () => {
         document.getElementById('navLinks').classList.toggle('open');
     });
-
-    // Close mobile nav on link click
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            document.getElementById('navLinks').classList.remove('open');
-        });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+        a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
     });
-</script>
 
+    // Agent Animation
+    const nodes = ['observe','reason','plan','execute','reflect','evolve'];
+    let idx = 0, ver = 1;
+    setInterval(() => {
+        nodes.forEach(n => {
+            document.getElementById('n-' + n).classList.remove('active');
+            document.getElementById('t-' + n).classList.remove('active');
+        });
+        document.getElementById('n-' + nodes[idx]).classList.add('active');
+        document.getElementById('t-' + nodes[idx]).classList.add('active');
+        if (idx === 5) {
+            ver = ver >= 6 ? 1 : ver + 1;
+            document.getElementById('agent-ver').textContent = 'Agent v' + ver;
+        }
+        idx = (idx + 1) % nodes.length;
+    }, 750);
+
+    // Vision scale animation
+    const steps = ['sc-1','sc-5','sc-25','sc-100'];
+    let si = 0;
+    setInterval(() => {
+        steps.forEach(s => document.getElementById(s).classList.remove('glow'));
+        document.getElementById(steps[si]).classList.add('glow');
+        // Vision stages
+        ['vs-today','vs-tomorrow','vs-future'].forEach(v => document.getElementById(v).classList.remove('active-stage'));
+        if (si <= 1) document.getElementById('vs-today').classList.add('active-stage');
+        else if (si === 2) document.getElementById('vs-tomorrow').classList.add('active-stage');
+        else document.getElementById('vs-future').classList.add('active-stage');
+        si = (si + 1) % steps.length;
+    }, 1200);
+</script>
 </body>
 </html>
